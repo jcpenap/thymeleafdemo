@@ -12,4 +12,10 @@ public class HelloController {
         return "Hello";
     }
 
+    @RequestMapping("sendData")
+    public ModelAndView sendData() {
+        ModelAndView modelAndView = new ModelAndView("data");
+        modelAndView.addObject("message", "Take up one idea and make it your life");
+        return modelAndView;
+    }
 }
