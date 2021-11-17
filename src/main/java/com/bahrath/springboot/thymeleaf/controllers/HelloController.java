@@ -50,4 +50,15 @@ public class HelloController {
         modelAndView.addObject("students", students);
         return modelAndView;
     }
+
+    @RequestMapping("/studentForm")
+    public ModelAndView getStudentForm() {
+        ModelAndView modelAndView = new ModelAndView("studentForm");
+        Student student = new Student();
+        student.setName("Jhon");
+        student.setScore(80);
+        modelAndView.addObject("student", student);
+        return modelAndView;
+    }
+
 }
