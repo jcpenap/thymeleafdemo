@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<form th:object="${student}">
+<form th:action="@{/saveStudent}" th:object="${student}">
     Name: <input type="text" th:field="*{name}">
     Score: <input type="text" th:field="*{score}">
     <input type="submit" value="Save">

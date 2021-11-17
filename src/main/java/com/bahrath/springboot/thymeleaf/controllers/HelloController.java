@@ -2,6 +2,7 @@ package com.bahrath.springboot.thymeleaf.controllers;
 
 import com.bahrath.springboot.thymeleaf.model.Student;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -58,6 +59,14 @@ public class HelloController {
         student.setName("Jhon");
         student.setScore(80);
         modelAndView.addObject("student", student);
+        return modelAndView;
+    }
+
+    @RequestMapping("/saveStudent")
+    public ModelAndView saveStudent(@ModelAttribute Student student) {
+        ModelAndView modelAndView = new ModelAndView("result");
+        System.out.println(student.getName());
+        System.out.println(student.getScore());
         return modelAndView;
     }
 
